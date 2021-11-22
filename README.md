@@ -20,3 +20,22 @@ json-server --watch db.json --port 3001
 
 # Angular é um framework js desenvolvido pela google para desenvolver aplicações web SPA baseado em componentes 
 
+# Conceitos essenciais 
+
+# main.ts ->chama o AppModule -> contém um atributo bootstrap, no qual aponta para o App component, onde toda a árvore de componente é chamada 
+
+# aplicação angular é modularizada ou seja coloca componentes dentro de um modulo  
+
+# oque é um componente 
+# um "pedaço" ou um trecho de código que define uma parte de uma tela
+# HTML CSS TS= TYPE SCRIPT 
+# por via de regra um modulo terá 
+# Home.component.css
+# home.component.html
+# home.component.ts 
+
+
+# install angular npm i -g @angular/cli vamos instalar o angular com esse comandoi
+# create project ng new nomedoprojeto --minimal serve para instalar minimamente 
+# ng serve start server angular 
+# npm start start backend
