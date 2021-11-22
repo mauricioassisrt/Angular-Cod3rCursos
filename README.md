@@ -39,3 +39,15 @@ json-server --watch db.json --port 3001
 # create project ng new nomedoprojeto --minimal serve para instalar minimamente 
 # ng serve start server angular 
 # npm start start backend
+
+# aula 3
+
+# quando definidos como true ele ativa o css e html fica todo contido no arquivo componente.ts
+"inlineTemplate": false,
+"inlineStyle": false,
+
+# no main.ts é carregado co appModule e dentro dele temos o bootstrap onde aponta o appcomonent.ts
+
+# para colocar imagens é definido na pasta assets e na environmentes é colocado as variaveis de ambientes
+
+
