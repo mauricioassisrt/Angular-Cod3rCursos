@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Caneta bic",
+      "price": 5.89
+    },
+    {
+      "id": 3,
+      "name": "Mac book pro ",
+      "price": 11.089
+    },
+    {
+      "id": 2,
+      "name": "Mouse POINT",
+      "price": 55.89
+    },
+    {
+      "name": "Geladeira",
+      "price ": "1913",
+      "id": 4
+    }
+  ]
+}
