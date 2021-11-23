@@ -1,0 +1,10 @@
+.sidnav{
+    background-color: #e9e3e3;
+}
+
+.sidnav a{
+    color: rgb(20, 17, 17);
+}
+.sidnav i {
+    padding-right: 10px;
+}
