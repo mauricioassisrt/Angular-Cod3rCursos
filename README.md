@@ -51,3 +51,10 @@ json-server --watch db.json --port 3001
 # para colocar imagens é definido na pasta assets e na environmentes é colocado as variaveis de ambientes
 
 
+# para criar um service ng g s services/product 
+
+# injectable -> será detectada pelo angular e será possivel ser injetada em outras classes
+
+# providIn: "root" -> é o injetor raiz da aplicação e será provido do root da aplicação 
+
+# injeção de dependencias -> quando a classe A precisa da classe B, a classe A recebe a classe B externamente de outro componente 
