@@ -13,7 +13,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { ProducCrudComponent } from './views/produc-crud/produc-crud.component'
+import { ProducCrudComponent } from './views/produc-crud/produc-crud.component';
+import { RedDirective } from './directives/red.directive';
+import { ForDirective } from './directives/for.directive'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { ProducCrudComponent } from './views/produc-crud/produc-crud.component'
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProducCrudComponent
+    ProducCrudComponent,
+    RedDirective,
+    ForDirective
   ],
   imports: [
     BrowserModule,
