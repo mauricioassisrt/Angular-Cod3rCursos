@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { CategoryCrudComponent } from './views/category-crud/category-crud.component';
+import { CategoryCreateComponent } from './components/category/category-create/category-create.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {MatInputModule} from '@angular/material/input';
     ProducCrudComponent,
     RedDirective,
     ForDirective,
-    ProductCreateComponent
+    ProductCreateComponent,
+    CategoryCrudComponent,
+    CategoryCreateComponent
   ],
   imports: [
     BrowserModule,
