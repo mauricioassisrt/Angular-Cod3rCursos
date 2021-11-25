@@ -19,6 +19,21 @@
       "name": "Geladeira",
       "price ": "1913",
       "id": 4
+    },
+    {
+      "name": "Nome",
+      "price": 1245,
+      "id": 5
+    },
+    {
+      "name": "Nome",
+      "price": 1245,
+      "id": 6
+    },
+    {
+      "name": "Nome",
+      "price": 1245,
+      "id": 7
     }
   ]
 }
