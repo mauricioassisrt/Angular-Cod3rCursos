@@ -34,6 +34,16 @@
       "name": "Nome",
       "price": 1245,
       "id": 7
+    },
+    {
+      "name": "sdfdsfsd",
+      "price": "02312",
+      "id": 8
+    },
+    {
+      "name": "",
+      "price": 0,
+      "id": 9
     }
   ]
 }
