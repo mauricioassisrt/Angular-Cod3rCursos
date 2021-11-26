@@ -21,4 +21,9 @@ export class CategoryService {
   create(category: Category): Observable<Category> {
     return this.http.post<Category>(this.baseUrl, category)
   }
+  read(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.baseUrl);
+  }
+
+
 }

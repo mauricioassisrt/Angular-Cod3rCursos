@@ -1,8 +1,9 @@
+import { Category } from './../category.model';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { CategoryReadDataSource, CategoryReadItem } from './category-read-datasource';
+import { CategoryReadDataSource  } from './category-read-datasource';
 
 @Component({
   selector: 'app-category-read',
@@ -12,7 +13,7 @@ import { CategoryReadDataSource, CategoryReadItem } from './category-read-dataso
 export class CategoryReadComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<CategoryReadItem>;
+  @ViewChild(MatTable) table!: MatTable<Category>;
   dataSource: CategoryReadDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
@@ -20,6 +21,7 @@ export class CategoryReadComponent implements AfterViewInit {
 
   constructor() {
     this.dataSource = new CategoryReadDataSource();
+    
   }
 
   ngAfterViewInit(): void {
@@ -27,4 +29,6 @@ export class CategoryReadComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
+  
 }

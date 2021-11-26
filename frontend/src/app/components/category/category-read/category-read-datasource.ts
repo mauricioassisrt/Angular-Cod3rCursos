@@ -1,3 +1,4 @@
+
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -5,33 +6,33 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
-export interface CategoryReadItem {
-  name: string;
+export interface Category {
+  nome: string;
   id: number;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: CategoryReadItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+const EXAMPLE_DATA: Category[] = [
+  {id: 1, nome: 'Hydrogen'},
+  {id: 2, nome: 'Helium'},
+  {id: 3, nome: 'Lithium'},
+  {id: 4, nome: 'Beryllium'},
+  {id: 5, nome: 'Boron'},
+  {id: 6, nome: 'Carbon'},
+  {id: 7, nome: 'Nitrogen'},
+  {id: 8, nome: 'Oxygen'},
+  {id: 9, nome: 'Fluorine'},
+  {id: 10, nome: 'Neon'},
+  {id: 11, nome: 'Sodium'},
+  {id: 12, nome: 'Magnesium'},
+  {id: 13, nome: 'Aluminum'},
+  {id: 14, nome: 'Silicon'},
+  {id: 15, nome: 'Phosphorus'},
+  {id: 16, nome: 'Sulfur'},
+  {id: 17, nome: 'Chlorine'},
+  {id: 18, nome: 'Argon'},
+  {id: 19, nome: 'Potassium'},
+  {id: 20, nome: 'Calcium'},
 ];
 
 /**
@@ -39,8 +40,8 @@ const EXAMPLE_DATA: CategoryReadItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class CategoryReadDataSource extends DataSource<CategoryReadItem> {
-  data: CategoryReadItem[] = EXAMPLE_DATA;
+export class CategoryReadDataSource extends DataSource<Category> {
+  data: Category[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -53,7 +54,7 @@ export class CategoryReadDataSource extends DataSource<CategoryReadItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<CategoryReadItem[]> {
+  connect(): Observable<Category[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -76,7 +77,7 @@ export class CategoryReadDataSource extends DataSource<CategoryReadItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: CategoryReadItem[]): CategoryReadItem[] {
+  private getPagedData(data: Category[]): Category[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -89,7 +90,7 @@ export class CategoryReadDataSource extends DataSource<CategoryReadItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: CategoryReadItem[]): CategoryReadItem[] {
+  private getSortedData(data: Category[]): Category[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -97,7 +98,7 @@ export class CategoryReadDataSource extends DataSource<CategoryReadItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        case 'nome': return compare(a.nome, b.nome, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
@@ -105,7 +106,7 @@ export class CategoryReadDataSource extends DataSource<CategoryReadItem> {
   }
 }
 
-/** Simple sort comparator for example ID/Name columns (for client-side sorting). */
+/** Simple sort comparator for example ID/nome columns (for client-side sorting). */
 function compare(a: string | number, b: string | number, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
