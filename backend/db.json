@@ -44,12 +44,52 @@
       "name": "",
       "price": 0,
       "id": 9
+    },
+    {
+      "name": "",
+      "price": 0,
+      "id": 10
+    },
+    {
+      "name": "",
+      "price": 0,
+      "id": 11
+    },
+    {
+      "name": "",
+      "price": 0,
+      "id": 12
+    },
+    {
+      "name": "asdas1",
+      "price": "1112",
+      "id": 13
     }
   ],
-  "category": [
+  "categorys": [
+    {
+      "nome": "asdasd",
+      "id": 1
+    },
+    {
+      "nome": "teste",
+      "id": 2
+    },
+    {
+      "nome": "asdas",
+      "id": 3
+    },
+    {
+      "nome": "TESTE",
+      "id": 4
+    },
+    {
+      "nome": "asdasda",
+      "id": 5
+    },
     {
       "nome": "",
-      "id": 1
+      "id": 6
     }
   ]
 }

@@ -25,6 +25,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { CategoryCrudComponent } from './views/category-crud/category-crud.component';
 import { CategoryCreateComponent } from './components/category/category-create/category-create.component';
+import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { CategoryReadComponent } from './components/category/category-read/category-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,9 @@ import { CategoryCreateComponent } from './components/category/category-create/c
     ForDirective,
     ProductCreateComponent,
     CategoryCrudComponent,
-    CategoryCreateComponent
+    CategoryCreateComponent,
+    ProductReadComponent,
+    CategoryReadComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,10 @@ import { CategoryCreateComponent } from './components/category/category-create/c
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
