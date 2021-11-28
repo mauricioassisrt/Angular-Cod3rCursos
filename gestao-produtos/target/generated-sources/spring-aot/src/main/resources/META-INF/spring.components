@@ -1,0 +1,6 @@
+#
+#Fri Nov 26 20:55:56 BRT 2021
+Repository.ProdutoRepository=org.springframework.data.repository.Repository
+Controller.ProdutoController=org.springframework.stereotype.Component
+Model.Produtos=javax.persistence.Entity
+com.example.demo.GestaoProdutosApplication=org.springframework.stereotype.Component
