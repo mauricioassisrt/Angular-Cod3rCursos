@@ -1,10 +1,10 @@
 {
+ 
     "/products": {
-      "target": "https://localhost:3001/products",
-      "secure": true,
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/products": ""
+      "target": "http://localhost:3001/products",
+      "secure": false,
+      "changeOrigin": true
       }
-    }
   }
+
+  

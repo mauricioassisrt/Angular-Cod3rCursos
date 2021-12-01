@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { ProducCrudComponent } from './views/produc-crud/produc-crud.component';
+import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 const routes: Routes = [{
   path: "",
   component: HomeComponent
@@ -18,17 +19,25 @@ const routes: Routes = [{
   component: ProductCreateComponent
 },
 {
+  path: "products/update/:id",
+  component: ProductUpdateComponent
+},
+
+{
   path: "category",
   component: CategoryCrudComponent
 }, 
 {
   path: "category/create",
   component: CategoryCreateComponent
-}
+},
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    useHash: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

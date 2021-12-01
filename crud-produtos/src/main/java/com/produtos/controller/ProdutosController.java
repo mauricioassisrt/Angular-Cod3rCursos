@@ -21,7 +21,7 @@ import com.produtos.repository.ProdutosRepository;
 
 @RestController
 
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProdutosController {
 
 	@Autowired
