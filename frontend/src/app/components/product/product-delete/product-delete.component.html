@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-header>
+
+        <mat-card-title>Alterar Product</mat-card-title>
+    </mat-card-header>
+
+
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do produto" [(ngModel)]="product.name" name="name" [disabled]="true">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Preço R$" [(ngModel)]="product.price" name="price" [disabled]="true">
+        </mat-form-field>
+    </form>
+
+
+    <button mat-raised-button (click)="deleteProduct()" color="primary">
+        Apagar  
+    </button>
+
+    <button mat-raised-button (click)="cancelProduct()" color="">
+        Cancelar
+    </button>
+
+</mat-card>

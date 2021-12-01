@@ -19,9 +19,9 @@ export class ProductUpdateComponent implements OnInit {
     this.productSerivce.readById(id).subscribe(product => {
       this.product = product
     })
-
+    
   }
-
+ 
   updateProduct() {
     this.productSerivce.update(this.product).subscribe(() => {
       this.productSerivce.showMessage('Produto atualizado com sucesso !!')
