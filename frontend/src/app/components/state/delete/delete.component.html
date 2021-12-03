@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-header>
+
+        <mat-card-title>Apagar Estado</mat-card-title>
+    </mat-card-header>
+
+
+
+    <form>
+        <mat-form-field>
+            <input matInput  [(ngModel)]="state.name" name="name" [disabled]="true">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput  [(ngModel)]="state.initials" name="initials" [disabled]="true">
+        </mat-form-field>
+    </form>
+
+
+    <button mat-raised-button (click)="deleteState()" color="primary">
+        Apagar  
+    </button>
+
+    <button mat-raised-button (click)="cancelState()" color="">
+        Cancelar
+    </button>
+
+</mat-card>

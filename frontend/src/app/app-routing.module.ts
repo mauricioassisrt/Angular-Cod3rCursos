@@ -7,6 +7,10 @@ import { HomeComponent } from './views/home/home.component';
 import { ProducCrudComponent } from './views/produc-crud/produc-crud.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { StateCrudComponent } from './views/state-crud/state-crud.component';
+import { CreateComponent } from './components/state/create/create.component';
+import { DeleteComponent } from './components/state/delete/delete.component';
+import { UpdateComponent } from './components/state/update/update.component';
 const routes: Routes = [{
   path: "",
   component: HomeComponent
@@ -30,16 +34,32 @@ const routes: Routes = [{
 {
   path: "category",
   component: CategoryCrudComponent
-}, 
+},
 {
   path: "category/create",
   component: CategoryCreateComponent
 },
-
+{
+  path: "state",
+  component: StateCrudComponent
+},
+{
+  path: "state/create",
+  component: CreateComponent
+},
+{
+  path: "state/update/:id",
+  component: UpdateComponent
+},
+{
+  path: "state/delete/:id",
+  component: DeleteComponent
+}
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
+  imports: [RouterModule.forRoot(routes, {
     useHash: true
   })],
   exports: [RouterModule]

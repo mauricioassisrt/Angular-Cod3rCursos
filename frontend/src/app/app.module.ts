@@ -34,6 +34,11 @@ import  localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { StateCrudComponent } from './views/state-crud/state-crud.component';
+import { ListComponent } from './components/state/list/list.component';
+import { CreateComponent } from './components/state/create/create.component';
+import { DeleteComponent } from './components/state/delete/delete.component';
+import { UpdateComponent } from './components/state/update/update.component';
 
 registerLocaleData(localePt);
 @NgModule({
@@ -52,7 +57,13 @@ registerLocaleData(localePt);
     ProductReadComponent,
     CategoryReadComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    StateCrudComponent,
+    ListComponent,
+    CreateComponent,
+    DeleteComponent,
+    UpdateComponent,
+   
   ],
   imports: [
     BrowserModule,

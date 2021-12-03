@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-header>
+
+        <mat-card-title>Novo de Estados</mat-card-title>
+    </mat-card-header>
+
+
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do produto" [(ngModel)]="state.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Sigla" [(ngModel)]="state.initials" name="initials" required>
+        </mat-form-field>
+    </form>
+
+
+    <button mat-raised-button (click)="createState()" color="primary">
+        Salvar 
+    </button>
+
+    <button mat-raised-button (click)="cancelState()" color="">
+        Cancelar
+    </button>
+
+</mat-card>

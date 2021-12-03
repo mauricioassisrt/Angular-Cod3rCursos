@@ -18,61 +18,55 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.produtos.model.Produtos;
 import com.produtos.model.State;
-import com.produtos.repository.ProdutosRepository;
 import com.produtos.repository.StateRepository;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-public class ProdutosController {
+public class StateController {
 
 	@Autowired
-	private ProdutosRepository repository;
 	private StateRepository repositoryA;
 
-	@GetMapping("products")
-	public List<Produtos> listar() {
-		return repository.findAll();
-	}
-	@GetMapping("teste")
-	public List<State> listara() {
+	@GetMapping("states")
+	public List<State> listar() {
 		return repositoryA.findAll();
 	}
+	
 
-	@PostMapping("products")
-	public Produtos adicionar(@RequestBody Produtos produto) {
+	@PostMapping("states")
+	public State adicionar(@RequestBody State sto) {
 
-		return repository.save(produto);
+		return repositoryA.save(sto);
 	}
 
-	@GetMapping("products/{id}")
+	@GetMapping("states/{id}")
 	
-	public Produtos getCarroById(@PathVariable Long id) {
-		return repository.findById(id).get();
+	public State getStateById(@PathVariable Long id) {
+		return repositoryA.findById(id).get();
 	}
 	
 	
-	 @DeleteMapping("products/{id}")
-	  public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
+	 @DeleteMapping("states/{id}")
+	  public ResponseEntity<HttpStatus> deleteState(@PathVariable("id") long id) {
 	    try {
-	    	repository.deleteById(id);
+	    	repositoryA.deleteById(id);
 	      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	    } catch (Exception e) {
 	      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 	  }
 	 
-	 @PutMapping("products/{id}")
-	  public ResponseEntity<Produtos> updateProdutos(@PathVariable("id") long id, @RequestBody Produtos prod) {
-	    Optional<Produtos> dados = repository.findById(id);
+	 @PutMapping("states/{id}")
+	  public ResponseEntity<State> updateState(@PathVariable("id") long id, @RequestBody State state) {
+	    Optional<State> dados = repositoryA.findById(id);
 	   
-	    dados.get().setName(prod.getName());
-	    dados.get().setPrice(prod.getPrice());
+	    dados.get().setName(state.getName());
+	    dados.get().setInitials(state.getInitials());
 	    
 	    if (dados.isPresent()) {
-	      return new ResponseEntity<>(repository.save(dados.get()), HttpStatus.OK);
+	      return new ResponseEntity<>(repositoryA.save(dados.get()), HttpStatus.OK);
 	    } else {
 	      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	    }
 	  }
-
 }

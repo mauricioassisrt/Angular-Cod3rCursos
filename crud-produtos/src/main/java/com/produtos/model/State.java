@@ -2,50 +2,40 @@ package com.produtos.model;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Produtos {
-
+public class State {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO )
 	private Long id;
 	private String name;
-	private Double price;
-
+	private String initials;
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Double getPrice() {
-		return price;
+	public String getInitials() {
+		return initials;
 	}
-
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setInitials(String initials) {
+		this.initials = initials;
 	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, name, price);
+		return Objects.hash(id, initials, name);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -54,10 +44,10 @@ public class Produtos {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produtos other = (Produtos) obj;
-		return Objects.equals(id, other.id) && Objects.equals(name, other.name) && Objects.equals(price, other.price);
+		State other = (State) obj;
+		return Objects.equals(id, other.id) && Objects.equals(initials, other.initials)
+				&& Objects.equals(name, other.name);
 	}
-
-
+	
 	
 }
