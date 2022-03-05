@@ -1,0 +1,13 @@
+<div>
+
+    <p mat-dialog-title>{{data.title}}</p>
+
+    <p display-2>{{data.message}}</p>
+
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onDismiss()">Não</button>
+        <button mat-raised-button class="padrao-color" (click)="onConfirm()">Sim</button>
+    </div>
+</div>
+

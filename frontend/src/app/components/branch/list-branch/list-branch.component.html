@@ -1,0 +1,107 @@
+<div class="cst-commercial-group-list container-fluid">
+    <div class="p-0 d-flex justify-content-between flex-column flex-md-row mb-3 head">
+        <div class="title">
+            <h2>Filial</h2>
+        </div>
+        <div class="d-flex gap-3 align-items-center">
+
+            <button style="background-color:#3365ae" class="btn btn-primary" mat-raised-button
+                    (click)="navigateTo('create-branch')">Nova Filial
+            </button>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="d-flex">
+
+
+                <button type="button" class="ms-3 me-3 btn-filtro" mat-raised-button (click)="filtro()">
+                    <mat-icon>add</mat-icon>
+                    Filtro
+                </button>
+
+
+                <mat-chip-list cdkDropList cdkDropListOrientation="horizontal">
+
+                    <mat-chip (click)="removerFiltro()" cdkDrag *ngIf="branchFiltro.campo">
+                        Filtrado por: {{branchFiltro.campo.label}}
+
+                        <mat-icon>cancel</mat-icon>
+
+                    </mat-chip>
+                </mat-chip-list>
+            </div>
+        </div>
+
+    </div>
+    <hr/>
+    <div class="table-responsive" infiniteScroll [spellcheck]="true" [infiniteScrollDisabled]=tableConfig.endedElements
+         [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50">
+        <table mat-table class="table"
+               style="color:#3365ae !important"
+               [dataSource]="dataSource"
+               cdkDropList
+               cdkDropListOrientation="horizontal"
+               (cdkDropListDropped)="drop($event)">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell cdkDrag *matHeaderCellDef scope="col" style="width: 20%; color:#3365ae !important"
+                    (click)="ordenarId()">
+
+                    <i *ngIf="this.branchFiltro.ordenador==false||this.ordenadorId==true"
+                       class="fas fa-solid fa-arrow-up"></i>
+                    Código
+                    <i *ngIf="this.branchFiltro.ordenador==true ||this.ordenadorId==true"
+                       class="fas fa-solid fa-arrow-down"></i>
+                </th>
+                <td mat-cell *matCellDef="let element" style="color: #3365ae"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cnpj">
+                <th mat-header-cell cdkDrag *matHeaderCellDef scope="col" style="width: 45%;color:#3365ae !important"
+                    (click)="ordenarCnpj()">
+                    <i *ngIf="this.branchFiltro.ordenador==false ||this.ordenadorCnpj==true"
+                       class="fas fa-solid fa-arrow-up"></i>
+                    CNPJ
+                    <i *ngIf="this.branchFiltro.ordenador==true||this.ordenadorCnpj==true"
+                       class="fas fa-solid fa-arrow-down"></i>
+                </th>
+                <td mat-cell *matCellDef="let element" style="color: #3365ae"> {{element.cnpj}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="phone">
+                <th mat-header-cell cdkDrag *matHeaderCellDef style="width: 10%;color:#3365ae !important"
+                    (click)="ordenarContato()">
+                    <i *ngIf="this.branchFiltro.ordenador==false||this.ordenadorContato==true"
+                       class="fas fa-solid fa-arrow-up"></i>
+                    Contato
+                    <i *ngIf="this.branchFiltro.ordenador==true||this.ordenadorContato==true"
+                       class="fas fa-solid fa-arrow-down"></i>
+                </th>
+                <td mat-cell *matCellDef="let element" style="color: #3365ae"> {{element.phone}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell cdkDrag *matHeaderCellDef> Ação</th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-icon (click)="navigateTo('edit-branch', element)"
+                              style=" vertical-align: middle; cursor: pointer;" class="icone-color">more_vert
+                    </mat-icon>
+                </td>
+
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+
+
+        <mat-paginator [length]="tableConfig.total" [pageSize]="tableConfig.limit" (page)="handlePagination($event)"
+                       arial-label="Select page" class="icone-color">
+        </mat-paginator>
+
+    </div>
+</div>

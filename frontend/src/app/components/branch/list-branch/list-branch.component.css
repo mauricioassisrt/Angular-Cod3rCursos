@@ -1,0 +1,32 @@
+.btn-filtro {
+    background: transparent;
+    background-color: transparent !important;
+    color: #3365ae;
+    box-shadow: none !important;
+    border: 1px dashed #3365ae;
+    border-radius: 30px;
+    line-height: 30px;
+}
+
+td,
+th {
+    vertical-align: middle;
+}
+
+.mat-column-action {
+    width: 100px !important;
+    text-align: center;
+}
+
+.mat-row:nth-child(even) {
+    background-color: #f5f6fa;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: #fff;
+}
+
+.mat-row td {
+    border-top: none;
+    border-bottom: none;
+}

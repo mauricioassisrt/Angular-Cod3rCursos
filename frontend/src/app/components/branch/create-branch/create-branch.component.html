@@ -1,0 +1,72 @@
+<div class="service-create">
+    <div class="row">
+        <div class="col-md-12" style="position: absolute; text-align: end; padding-right: 20px;">
+            <button style="margin-right: 12px;" (click)="navigateBack()" color="primary" mat-button>Voltar</button>
+
+            <button *ngIf="isEdit" [disabled]="loading" style="margin-right: 12px;" type="button" mat-stroked-button color="warn" (click)="handleDelete()">Delete</button>
+
+
+            <button [disabled]="loading" mat-raised-button type="submit" style="background-color:#006fff" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+        </div>
+    </div>
+    <form autocomplete="off" [formGroup]="form" id="ngForm" (submit)="onSubmit()">
+        <form-container [title]="pageTitle">
+            <div content>
+                <mat-card-content class="form-container row">
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">CNPJ</mat-label>
+                        <input #cnpj matInput formControlName="cnpj" type="text" required mask="000.000.000-00||00.000.000/0000-00">
+                        <mat-error>{{getErrorMessage(form, 'cnpj')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Inscrição Estadual</mat-label>
+                        <input #ie matInput formControlName="ie" type="text" required>
+                        <mat-error>{{getErrorMessage(form, 'ie')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Contato</mat-label>
+                        <input #phone matInput formControlName="phone" type="text" required mask="(00)0000-0000||(00)0 0000-0000">
+                        <mat-error>{{getErrorMessage(form, 'phone')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline" required>
+                        <mat-label class="label-text-color">RN</mat-label>
+                        <input #rn matInput formControlName="rn" type="text" required>
+                        <mat-error>{{getErrorMessage(form, 'rn')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Filial Pipa</mat-label>
+                        <input #branch_pipa matInput formControlName="branch_pipa" type="text" required [maxLength]="2" [min]="1">
+                        <mat-error>{{getErrorMessage(form, 'branch_pipa')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Endereço</mat-label>
+                        <input #address matInput formControlName="address" type="text" required>
+                        <mat-error>{{getErrorMessage(form, 'address')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Número</mat-label>
+                        <input #number matInput formControlName="number" type="number" required>
+                        <mat-error>{{getErrorMessage(form, 'number')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">CEP</mat-label>
+                        <input #zip matInput formControlName="zip" type="text" required mask="00.000-000">
+                        <mat-error>{{getErrorMessage(form, 'zip')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Complemento</mat-label>
+                        <input #complement matInput formControlName="complement" type="text" required>
+                        <mat-error>{{getErrorMessage(form, 'complement')}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="cst-commercial-group" appearance="outline">
+                        <mat-label class="label-text-color">Descrição</mat-label>
+                        <input #description matInput formControlName="description" type="text" required>
+                        <mat-error>{{getErrorMessage(form, 'description')}}</mat-error>
+                    </mat-form-field>
+                </mat-card-content>
+            </div>
+        </form-container>
+
+
+    </form>
+</div>
